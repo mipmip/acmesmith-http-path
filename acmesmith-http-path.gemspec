@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'acmesmith/http-path/version'
+require 'acmesmith-http-path/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "acmesmith-http-path"
