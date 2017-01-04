@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class Acmesmith::Http::PathTest < Minitest::Test
+class AcmesmithHttpPathTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Acmesmith::Http::Path::VERSION
+    refute_nil ::AcmesmithHttpPath::VERSION
   end
 end
