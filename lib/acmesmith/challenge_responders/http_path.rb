@@ -1,8 +1,8 @@
-#require "acmesmith/challenge_responders/base"
+require 'acmesmith/challenge_responders/base'
 
 module Acmesmith
   module ChallengeResponders
-    class HttpPath
+    class HttpPath < Base
 
       def support?(type)
         type == 'http-01'
