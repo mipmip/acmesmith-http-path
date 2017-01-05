@@ -10,13 +10,19 @@ module Acmesmith
 
       def initialize(config)
         @config = config
-        @htdocs_path = @config[:htdocs_path]
       end
 
       def respond(domain, challenge)
+
+        begin
+          htdocs_path = @config[domain.to_sym]['htdocs_path']
+        rescue
+          raise "cannot read configuration for http_path"
+        end
+
         puts "=> Responding challenge http-01 for #{domain} in #{self.class.name}"
-        FileUtils.mkdir_p( File.join( @htdocs_path, File.dirname( challenge.filename ) ) )
-        File.write( File.join( @htdocs_path, challenge.filename), challenge.file_content )
+        FileUtils.mkdir_p( File.join( htdocs_path, File.dirname( challenge.filename ) ) )
+        File.write( File.join( htdocs_path, challenge.filename), challenge.file_content )
       end
 
       def cleanup(domain, challenge)
