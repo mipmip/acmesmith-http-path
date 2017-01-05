@@ -1,4 +1,5 @@
 #require "acmesmith/challenge_responders/base"
+p 'JO!'
 
 module Acmesmith
   module ChallengeResponders
