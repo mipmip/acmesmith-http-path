@@ -1,0 +1,12 @@
+endpoint: https://acme-staging.api.letsencrypt.org/
+
+storage:
+  type: filesystem
+  path: /tmp/acmesmith-http-path_test/storage
+
+challenge_responders:
+  - http_path:
+      "domain-one.com":
+        htdocs_path: /tmp/acmesmith-http-path_test/domain-one.com
+      "second-domain.com":
+        htdocs_path: /var/www/second-domain.com/public_html
