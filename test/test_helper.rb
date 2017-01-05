@@ -1,8 +1,14 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'simplecov'
 require 'acmesmith-http-path/version'
 require 'acmesmith/command'
 
 require 'minitest/autorun'
+
+SimpleCov.start do
+  add_filter '/test/'
+  add_filter '/vendor/'
+end
 
 module Acmesmith
   class CommandTest < Acmesmith::Command
@@ -28,6 +34,8 @@ module Acmesmith
      responder, challenge = find_responder(domain)
      responder.cleanup(domain, challenge)
     end
+
+    private
 
     def find_responder(domain)
       authz = acme.authorize(domain: domain)

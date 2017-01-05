@@ -1,6 +1,8 @@
 # acmesmith-http-path
 
 [![Build Status](https://travis-ci.org/mipmip/acmesmith-http-path.svg?branch=master)](https://travis-ci.org/mipmip/acmesmith-http-path)
+[![Code Climate](https://codeclimate.com/github/mipmip/acmesmith-http-path/badges/gpa.svg)](https://codeclimate.com/github/mipmip/acmesmith-http-path)
+[![Test Coverage](https://codeclimate.com/github/mipmip/acmesmith-http-path/badges/coverage.svg)](https://codeclimate.com/github/mipmip/acmesmith-http-path/coverage)
 
 This gem is a plugin for [Acmesmith](https://github.com/sorah/acmesmith)
 and implements an automated `http-01` challenge responder.
