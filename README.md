@@ -1,9 +1,13 @@
 # acmesmith-http-path
 
+[![Build Status](https://travis-ci.org/mipmip/acmesmith-http-path.svg?branch=master)](https://travis-ci.org/mipmip/acmesmith-http-path)
+
 This gem is a plugin for [Acmesmith](https://github.com/sorah/acmesmith)
 and implements an automated `http-01` challenge responder.
 
-## Usage ### Prerequisites
+## Usage
+
+### Prerequisites
 - You need to have write access to the docroot of your webserver vhost
 
 ### Installation Install `acmesith-http-path` gem along with
