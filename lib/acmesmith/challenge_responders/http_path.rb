@@ -24,13 +24,13 @@ module Acmesmith
       end
 
       def htdocs_path(domain)
-        begin
-          htdocs_path = @config[domain.to_sym]['htdocs_path']
-        rescue
+        if @config[domain.to_sym] && @config[domain.to_sym]['htdocs_path']
+          @config[domain.to_sym]['htdocs_path']
+        elsif @config[:default] && @config[:default]['htdocs_path']
+          @config[:default]['htdocs_path']
+        else
           raise "cannot read configuration for http_path"
         end
-
-        htdocs_path
       end
 
     end
