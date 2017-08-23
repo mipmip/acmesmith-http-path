@@ -14,9 +14,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/mipmip/acmesmith-http-path"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
+  spec.files = Dir["bin,lib}/**/*"] + ["Rakefile", "README.md"]
+  spec.test_files = Dir["test/**/*"]
   spec.require_paths = ["lib"]
 
   spec.add_dependency "acmesmith"
@@ -25,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "simplecov", "~> 0.12"
+  spec.add_development_dependency "pry"
 end
