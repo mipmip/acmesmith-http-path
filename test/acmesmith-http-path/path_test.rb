@@ -46,6 +46,19 @@ class AcmesmithHttpPathTest < Minitest::Test
     Acmesmith::CommandTest.start(args)
 
     newdir ='/tmp/acmesmith-http-path_test/domain-one.com/.well-known/acme-challenge/'
-    assert(!File.directory?(newdir))
+    assert Dir["#{newdir}/*"].empty?
+  end
+
+  def test_if_responder_uses_default_http_path_for_unconfigured_domain
+    FileUtils.mkdir_p "/tmp/acmesmith-http-path_test"
+
+    args = ["register", "mailto:test@example.com", '-c', 'test/acmesmith-http-path/config-with-default.mock.yml']
+    Acmesmith::CommandTest.start(args)
+
+    args = ["respond", "domain-two.com", '-c', 'test/acmesmith-http-path/config-with-default.mock.yml']
+    Acmesmith::CommandTest.start(args)
+
+    newdir ='/tmp/acmesmith-http-path_test/.well-known/acme-challenge/'
+    assert(File.directory?(newdir))
   end
 end
